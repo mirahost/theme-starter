@@ -1,0 +1,67 @@
+{
+  "index" : {
+    "path": "/",
+    "method": "GET",
+    "controller": "content"
+  },
+  "blog" : {
+    "path": "/blog-list/",
+    "method": "GET",
+    "controller": {
+      "name": "content",
+      "options": {
+        "1" : {
+          "data": {
+            "source": "http://cms.sterlingross.com/json/properties/",
+            "outputAs": "php"
+          }
+        }
+      }
+    }
+  },
+  "property" : {
+    "path": "/property/[{mls_id}/]",
+    "method": "GET",
+    "controller": {
+      "name": "content",
+      "options": {
+        "1" : {
+          "data": {
+            "source": "http://cms.sterlingross.com/json/property/{mls_id}/",
+            "outputAs": "php"
+          }
+        }
+      }
+    }
+  },
+  "agents" : {
+    "path": "/agents/",
+    "method": "GET",
+    "controller": {
+      "name": "content",
+      "options": {
+        "1" : {
+          "data": {
+            "source": "http://cms.sterlingross.com/json/agents/",
+            "outputAs": "php"
+          }
+        }
+      }
+    }
+  },
+  "agent" : {
+    "path": "/agent/[{agent_id}/]",
+    "method": "GET",
+    "controller": {
+      "name": "content",
+      "options": {
+        "1" : {
+          "data": {
+            "source": "http://cms.sterlingross.com/json/agent/{agent_id}/",
+            "outputAs": "php"
+          }
+        }
+      }
+    }
+  }
+}
